@@ -8,7 +8,7 @@ Even though Go isn’t usually used for algorithmic competitions, U.S. companies
 
 ## Topics:
 ### Arrays & Strings
-* Two Sum
+* Two Sum [Solution](1_algorithms/arrays_and_strings/two_sum/cmd/main.go) | [Leetcode](https://leetcode.com/problems/two-sum/)
 * Subarray Sum
 * Sliding Window Maximum
 * Rotate Array
