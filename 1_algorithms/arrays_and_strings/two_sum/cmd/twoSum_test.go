@@ -5,14 +5,14 @@ import (
 	"testing"
 )
 
-func TestTwoSum(t *testing.T) {
-	type testCase struct {
-		nums     []int
-		target   int
-		expected []int
-	}
+type testCase struct {
+	nums     []int
+	target   int
+	expected []int
+}
 
-	testcases := []testCase{
+func getTestCases() []testCase {
+	return []testCase{
 		{
 			[]int{2, 7, 11, 15},
 			9,
@@ -29,8 +29,16 @@ func TestTwoSum(t *testing.T) {
 			[]int{0, 1},
 		},
 	}
+}
 
-	for _, tc := range testcases {
+func TestTwoSum(t *testing.T) {
+	for _, tc := range getTestCases() {
 		assert.Equal(t, tc.expected, twoSum(tc.nums, tc.target))
+	}
+}
+
+func TestTwoSumNaive(t *testing.T) {
+	for _, tc := range getTestCases() {
+		assert.Equal(t, tc.expected, twoSumNaive(tc.nums, tc.target))
 	}
 }
