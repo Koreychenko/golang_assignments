@@ -98,3 +98,39 @@ func BenchmarkTwoSumOptimalNonAllocated(b *testing.B) {
 		})
 	}
 }
+
+func BenchmarkTwoSumTwoPointers(b *testing.B) {
+	cases := []struct {
+		name          string
+		n             int
+		solutionAtEnd bool
+	}{
+		{"n=100", 100, false},
+		{"n=1k", 1000, false},
+		{"n=10k", 10_000, false},
+		{"n=100k_end", 100_000, true},
+	}
+	for _, c := range cases {
+		b.Run(c.name, func(b *testing.B) {
+			runBench(b, c.n, c.solutionAtEnd, twoSumTwoPointers)
+		})
+	}
+}
+
+func BenchmarkTwoSumMappingTable(b *testing.B) {
+	cases := []struct {
+		name          string
+		n             int
+		solutionAtEnd bool
+	}{
+		{"n=100", 100, false},
+		{"n=1k", 1000, false},
+		{"n=10k", 10_000, false},
+		{"n=100k_end", 100_000, true},
+	}
+	for _, c := range cases {
+		b.Run(c.name, func(b *testing.B) {
+			runBench(b, c.n, c.solutionAtEnd, twoSumMappingTable)
+		})
+	}
+}

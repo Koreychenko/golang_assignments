@@ -42,3 +42,15 @@ func TestTwoSumNaive(t *testing.T) {
 		assert.Equal(t, tc.expected, twoSumNaive(tc.nums, tc.target))
 	}
 }
+
+func TestTwoSumTwoPointers(t *testing.T) {
+	for _, tc := range getTestCases() {
+		assert.Equal(t, tc.expected, twoSumTwoPointers(tc.nums, tc.target))
+	}
+}
+
+func TestTwoSumMappingsTable(t *testing.T) {
+	for _, tc := range getTestCases() {
+		assert.Equal(t, tc.expected, twoSumMappingTable(tc.nums, tc.target))
+	}
+}
